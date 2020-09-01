@@ -1,7 +1,7 @@
 import { LatLng } from 'leaflet';
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import { ReactLeafletSearch, SearchControl } from 'react-leaflet-search';
+import { SearchControl } from 'react-leaflet-search';
 import hotSpotData from './new_spots.json';
 
 class App extends Component {
@@ -30,7 +30,11 @@ class App extends Component {
                 
              ))
            }
-           <SearchControl />
+           <div style={{ marginLeft: "80%", marginTop: "5px" }}>
+           <SearchControl inputPlaceholder="e.g. Soshanguve, Mabopane" />
+            
+           </div>
+           
             
             
         
