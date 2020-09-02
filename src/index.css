@@ -2,3 +2,16 @@
   width: 100%;
   height: 50vh;
 }
+
+.pointer{
+  position:absolute;
+  top:50px;
+  left:80%;
+  z-index:99999;
+}
+
+#findHotspot {
+  text-shadow: 2px 2px 2px purple;
+  
+}
+

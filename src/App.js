@@ -3,8 +3,17 @@ import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { SearchControl } from 'react-leaflet-search';
 import hotSpotData from './new_spots.json';
+import CSSTransition from 'react-transition-group';
+import './index.css';
+import Typist from 'react-typist';
 
 class App extends Component {
+  
+  componentDidMount() {
+      setTimeout(()=> {
+        document.getElementById("findHotspot").setAttribute("style", "display: none");
+      }, 8000);
+  }
 
   render() {
     const initLat = -25.7479;
@@ -31,9 +40,17 @@ class App extends Component {
              ))
            }
            <div style={{ marginLeft: "80%", marginTop: "5px" }}>
-           <SearchControl inputPlaceholder="e.g. Soshanguve, Mabopane" />
-            
+           <SearchControl id="searchBox" inputPlaceholder="e.g. Soshanguve, Mabopane" openSearchOnLoad={ true } provider="BingMap" providerOptions={{ region: "za" }} zoom={12} />
+           
+         <Typist><div className='pointer' id='findHotspot' style={{ fontWeight: "bold", fontFamily: "inherit", color: "lightgreen", fontSize: "16pt"}}>
+           <Typist.Delay ms={2000} />
+           <Typist.Backspace count={4} delay={8} />
+           Find a Hotspot</div></Typist>
+           
+     
+          
            </div>
+           
            
             
             
