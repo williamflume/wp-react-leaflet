@@ -1,7 +1,7 @@
 import { LatLng } from 'leaflet';
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import { SearchControl } from 'react-leaflet-search';
+import { ReactLeafletSearch } from 'react-leaflet-search';
 import hotSpotData from './new_spots.json';
 import CSSTransition from 'react-transition-group';
 import './index.css';
@@ -20,7 +20,7 @@ class App extends Component {
     const initLng = 28.2293;
     let initPosition = [initLat, initLng];
     //const searchComponent = (props) => <ReactLeafletSearch position="topleft" />;
-
+    const ReactLeafletSearchComponent = withLeaflet(ReactLeafletSearch);
     return (
       
         <Map center={initPosition} zoom={10}>
@@ -40,7 +40,7 @@ class App extends Component {
              ))
            }
            <div style={{ marginLeft: "80%", marginTop: "5px" }}>
-           <SearchControl id="searchBox" inputPlaceholder="e.g. Soshanguve, Mabopane" openSearchOnLoad={ true } provider="BingMap" providerOptions={{ region: "za" }} zoom={12} />
+           <ReactLeafletSearchComponent provider="OpenStreetMap" providerOptions={{ region: "za"}} openSearchOnLoad={true} zoom={14} />
            
          <Typist><div className='pointer' id='findHotspot' style={{ fontWeight: "bold", fontFamily: "inherit", color: "lightgreen", fontSize: "16pt"}}>
            <Typist.Delay ms={2000} />
