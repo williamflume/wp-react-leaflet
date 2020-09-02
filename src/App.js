@@ -1,6 +1,6 @@
 import { LatLng } from 'leaflet';
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, withLeaflet } from 'react-leaflet';
 import { ReactLeafletSearch } from 'react-leaflet-search';
 import hotSpotData from './new_spots.json';
 import CSSTransition from 'react-transition-group';
